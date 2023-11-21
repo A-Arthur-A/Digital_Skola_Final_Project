@@ -14,9 +14,9 @@ attribute_info = """
                  - Pickup date : YYYY-MM-DD UTC
                  - Pickup time : hh:mm UTC
                  - Pickup longitude : Pickup Location, Longitude
-                 - Pickup longitude : Pickup Location, Latitude
-                 - Pickup longitude : dropoff Location, Longitude
-                 - Pickup longitude : dropoff Location, Latitude
+                 - Pickup latitude : Pickup Location, Latitude
+                 - Dropoff longitude : dropoff Location, Longitude
+                 - Dropoff latitude : dropoff Location, Latitude
                  - Passenger count : 1 - 7
                  """
 
