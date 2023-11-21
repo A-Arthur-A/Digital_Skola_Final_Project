@@ -77,7 +77,7 @@ def run_ml_app():
         data = {"Pickup date" : pickup_dt,
                 "Pickup time" : pickup_tm, 
                 "Pickup latitude" : picklat,
-                "Pickup longitude" : packlong,
+                "Pickup longitude" : picklong,
                 "Dropoff latitude" : droplat,
                 "Dropoff longitude" : droplong,
                 "Passenger count" : passcount
