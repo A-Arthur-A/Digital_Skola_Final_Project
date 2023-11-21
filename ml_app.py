@@ -126,8 +126,8 @@ def run_ml_app():
     ml_data.append(hs.haversine(loc1,loc2,unit=Unit.KILOMETERS))
     st.write(ml_data)
 
-    scaler = load_scaler("scaler.pkl")
-    
+    model_reg, scaler = joblib.load("model_with_scaler.joblib")
+    scaled_data = scaler.transform(ml_data)
     
     
 
