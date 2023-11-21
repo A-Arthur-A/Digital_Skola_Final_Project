@@ -163,5 +163,4 @@ def run_ml_app():
                               'Not Promoted':round(pred_proba[0][0]*100,4)}
     aa = {"tipe data":type(pickup_dt),
          "tipe data":type(pickup_tm)}
-    st.success("Fare amount":prediction_reg)
     
