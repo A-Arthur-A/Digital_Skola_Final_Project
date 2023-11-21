@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import haversine as hs
+from haversine import Unit
 import datetime as dt
 
 
@@ -105,6 +106,17 @@ def run_ml_app():
         ml_data.append(i)
       else :
         pass
+    year = pickup_dt.year
+    month = pickup_dt.month
+    day = pickup_dt.day
+    weekday = pickup_dt.weekday
+    hour = pickup_tm.hour
+    ml_data.append(year)
+    ml_data.append(month)
+    ml_data.append(day)
+    ml_data.append(weekday)
+    ml_data.append(hour)
+    
     st.write(ml_data)
         
 
