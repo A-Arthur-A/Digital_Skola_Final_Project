@@ -128,9 +128,7 @@ def run_ml_app():
 
     model_reg, scaler = joblib.load("model_with_scaler.joblib")
     scaled_data = scaler.transform(ml_data)
-    prediction = model_reg.predict(scaled_data)
     st.write(scaled_data)
-    st.write(prediction)
 
     
 
