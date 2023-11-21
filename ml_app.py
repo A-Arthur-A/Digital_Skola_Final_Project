@@ -74,14 +74,14 @@ def run_ml_app():
     passcount = st.number_input("Passenger count :",0,7,1)
     
     with st.expander("Your data"):
-        data = {"Pickup date" : pickup_dt,
-                "Pickup time" : pickup_tm, 
+        data = {"Pickup longitude" : picklong,
                 "Pickup latitude" : picklat,
-                "Pickup longitude" : picklong,
-                "Dropoff latitude" : droplat,
                 "Dropoff longitude" : droplong,
-                "Passenger count" : passcount
-               }    
+                "Dropoff latitude" : droplat,
+                "Passenger count" : passcount,
+                "Pickup date" : pickup_dt,
+                "Pickup time" : pickup_tm 
+                }    
     with st.expander("Your Selected Options"):
         result = {
              'Department':department,
@@ -97,11 +97,21 @@ def run_ml_app():
             'avg_training_score':avg_training,
         }
     
-    # st.write(result)
-    scaled_data = []
+    ml_data = []
     for i in data.values():
-      if type(i) == int:
-        scaled_data.append(i)
+      if type(i) == datetime.date:
+        year = i.dt.year
+        month = i.dt.month
+        day = i.dt.day
+        weekday = i.dt.weekday
+        ml_data.append(i)
+      elif type(i) == datetime.time:
+        hour = i.dt.hour
+        ml_data.append(i)
+      else :
+        ml_data.append(i)
+    st.write(ml_data)
+        
 
 
 
