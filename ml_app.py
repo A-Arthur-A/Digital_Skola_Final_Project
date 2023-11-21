@@ -101,31 +101,25 @@ def run_ml_app():
             'awards_won':awards,
             'avg_training_score':avg_training,
         }
-    
-    ml_data = []
-    for i in data.values():
-      if type(i) == int:
-        ml_data.append(i)
-      elif type(i) == float:
-        ml_data.append(i)
-      else :
-        pass
-    year = pickup_dt.year
-    month = pickup_dt.month
-    day = pickup_dt.day
-    weekday = pickup_dt.weekday()
-    hour = pickup_tm.hour
-    ml_data.append(year)
-    ml_data.append(month)
-    ml_data.append(day)
-    ml_data.append(weekday)
-    ml_data.append(hour)
+
     #Jarak perjalanan
     loc1=(picklat, picklong)
     loc2=(droplat, droplong)
-    ml_data.append(hs.haversine(loc1,loc2,unit=Unit.KILOMETERS))
+    distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
+    
+    ml_data = {"Pickup longitude" : picklong,
+                "Pickup latitude" : picklat,
+                "Dropoff longitude" : droplong,
+                "Dropoff latitude" : droplat,
+                "Passenger count" : passcount,
+                "year" : pickup_dt.year,
+                "month" : pickup_dt.month,
+                "day" = pickup_dt.day,
+                "weekday" = pickup_dt.weekday(),
+                "hour" = pickup_tm.hour,
+                "Distance_in_Km" : distance}
     st.write(ml_data)
-
+    
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
     
     
