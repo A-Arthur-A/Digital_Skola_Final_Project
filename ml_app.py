@@ -118,8 +118,6 @@ def run_ml_app():
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
     scaled_data = scaler.transform(df_new)
     df_scld = pd.DataFrame(scaled_data, columns=scaled_data.columns)
-    prediction_log = model_reg.predict(df_scld)
-    prediction_reg = (np.exp(prediction_log)-1)
     
 
   
