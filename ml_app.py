@@ -81,5 +81,5 @@ def run_ml_app():
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
 
-    st.map(dfl, size= 20, color='green')
+    #st.map(dfl, size= 20, color='green')
     
