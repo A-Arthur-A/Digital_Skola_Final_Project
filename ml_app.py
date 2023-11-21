@@ -118,9 +118,9 @@ def run_ml_app():
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
     scaled_data = scaler.transform(df_new)
     
-    df_scld = pd.DataFrame(scaled_data, columns=scaled_data.columns)
-    
-    st.write(df_scld)
+    df_scld = pd.DataFrame(scaled_data, columns=df_new.columns)
+    prediction_log = model_reg.predict(df_scld)
+    st.write(prediction_log)
   
     encoded_result = []
     for i in result.values():
