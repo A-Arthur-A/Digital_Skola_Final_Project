@@ -116,7 +116,10 @@ def run_ml_app():
     ml_data.append(day)
     ml_data.append(weekday)
     ml_data.append(hour)
-    
+    #Jarak perjalanan
+    loc1=(picklat, picklong)
+    loc2=(droplat, droplong)
+    ml_data.append(hs.haversine(loc1,loc2,unit=Unit.KILOMETERS))
     st.write(ml_data)
         
 
