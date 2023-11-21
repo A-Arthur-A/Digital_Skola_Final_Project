@@ -86,6 +86,6 @@ def run_ml_app():
     df = pd.DataFrame(
     arr,
     columns=['lat', 'lon'])
-    st.map(df, color = 'green')
+    st.map(df)
     
     
