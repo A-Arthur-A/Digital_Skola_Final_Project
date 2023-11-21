@@ -99,13 +99,13 @@ def run_ml_app():
     
     ml_data = []
     for i in data.values():
-      if type(i) == datetime.date:
+      if type(i) == dt.date:
         year = i.dt.year
         month = i.dt.month
         day = i.dt.day
         weekday = i.dt.weekday
         ml_data.append(i)
-      elif type(i) == datetime.time:
+      elif type(i) == dt.time:
         hour = i.dt.hour
         ml_data.append(i)
       else :
