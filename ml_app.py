@@ -164,7 +164,7 @@ def run_ml_app():
     if prediction == 1:
         st.success("Congratulation, you get promotion")
         st.write(aa)
-        st.write(prediction_reg)
+        st.write(prediction)
     else:
         st.warning('Need to improve')
-        st.write(prediction_reg)
+        st.write(prediction)
