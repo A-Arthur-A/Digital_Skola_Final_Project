@@ -82,7 +82,7 @@ def run_ml_app():
     st.write("Distance :", distance, "km")
     st.write("Pickup Location :")
     a = 1
-    df_map = pd.DataFrame({"lat" : [picklat, droplat], "long" : [picklong, droplong], "sz" : [a, a], "clr" : ["green", "red"]})
+    df_map = pd.DataFrame({"lat" : [picklat, droplat], "long" : [picklong, droplong], "sz" : [a, a], "clr" : np.random.rand(1000, 4).tolist()})
     arr = np.array([[picklat, picklong]])
     df = pd.DataFrame(
     arr,
