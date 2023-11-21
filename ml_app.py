@@ -67,7 +67,6 @@ def run_ml_app():
     awards = st.radio("Awards Won", [0,1])
     avg_training = st.number_input("Average Training Score",0,100)
     picklong = st.number_input(label="Pickup Location Longitude", min_value = -75.000000, max_value = -73.000000, value = -73.981880, step=0.000100,format="%.6f")
-    picklat = st.number_input(label="Pickup Location Latitude", min_value = 40.500000, max_value = 41.500000, value = 40.752805, step=0.000100,format="%.6f")
     
     
     with st.expander("Your Selected Options"):
