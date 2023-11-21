@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import haversine as hs
-import datetime as dt
+import datetime
 # import ml package
 import joblib
 import os
@@ -27,6 +27,8 @@ reg = {'region_1':1,'region_2':2,'region_3':3,'region_4':4,'region_5':5,
        'region_21':21,'region_22':22,'region_23':23,'region_24':24,'region_25':25,
        'region_26':26,'region_27':27,'region_28':28,'region_29':29,'region_30':30,
        'region_31':31,'region_32':32,'region_33':33,'region_34':34}
+now = datetime.datetime.now()
+
 
 def get_value(val, my_dict):
     for key, value in my_dict.items():
@@ -43,7 +45,7 @@ def run_ml_app():
         st.markdown(attribute_info)
 
     st.subheader("Input Your Data")
-    pickup_dt = st.
+    pickup_dt = st.date_input("Pickup Date", value = now)
     department = st.selectbox('Department', ['Sales & Marketing', 'Operations', 'Technology', 'Analytics', 
                                              'R&D', 'Procurement', 'Finance', 'HR', 'Legal'])
     region = st.selectbox('Region', ['region_1','region_2','region_3','region_4','region_5', 'region_6','region_7',
