@@ -129,8 +129,6 @@ def run_ml_app():
     scaler = load_scaler("scaler.pkl")
     scaled_data = scaler.transform(ml_data)
 
-    model_reg = load_model("model_lreg.pkl")
-    prediction = model_reg.predict(scaled_data)
     
     
 
