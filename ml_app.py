@@ -86,17 +86,17 @@ def run_ml_app():
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
 
     with st.expander("Your data"):
-        ml_data = {"Pickup longitude" : picklong,
-                "Pickup latitude" : picklat,
-                "Dropoff longitude" : droplong,
-                "Dropoff latitude" : droplat,
-                "Passenger count" : passcount,
-                "year" : pickup_dt.year,
-                "month" : pickup_dt.month,
-                "day" : pickup_dt.day,
-                "weekday" : pickup_dt.weekday(),
-                "hour" : pickup_tm.hour,
-                "Distance_in_Km" : distance}
+        ml_data = {"Pickup longitude" : [picklong],
+                "Pickup latitude" : [picklat],
+                "Dropoff longitude" : [droplong],
+                "Dropoff latitude" : [droplat],
+                "Passenger count" : [passcount],
+                "year" : [pickup_dt.year],
+                "month" : [pickup_dt.month],
+                "day" : [pickup_dt.day],
+                "weekday" : [pickup_dt.weekday()],
+                "hour" : [pickup_tm.hour],
+                "Distance_in_Km" : [distance]}
         
     with st.expander("Your Selected Options"):
         result = {
@@ -113,7 +113,7 @@ def run_ml_app():
             'avg_training_score':avg_training,
         }
 
-    df_new = pd.DataFrame(ml_data, index =[1])
+    df_new = pd.DataFrame(ml_data)
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
     scaled_data = scaler.transform(df_new)
     
