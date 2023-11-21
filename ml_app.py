@@ -83,3 +83,7 @@ def run_ml_app():
 
     #st.map(dfl, size= 20, color='green')
     
+    df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
+    st.map(df)
