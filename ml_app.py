@@ -98,10 +98,10 @@ def run_ml_app():
         }
     
     # st.write(result)
-    Scaled_result = []
+    scaled_data = []
     for i in data.values():
       if type(i) == int:
-        scaled_result.append(i)
+        scaled_data.append(i)
 
 
 
