@@ -72,10 +72,10 @@ def run_ml_app():
     service = st.number_input("Length of Service",1,37)
     awards = st.radio("Awards Won", [0,1])
     avg_training = st.number_input("Average Training Score",0,100)
-    picklong = st.number_input("Pickup Location Longitude :",-75.000000,-73.000000,-73.981880,0.000100,"%.6f")
-    picklat = st.number_input("Pickup Location Latitude :",40.500000,41.500000,40.752805,0.000100,"%.6f")
-    droplong = st.number_input("Dropoff Location Longitude :",-75.000000,-73.000000,-73.981010,0.000100,"%.6f")
-    droplat = st.number_input("Dropoff Location Latitude :",40.500000,41.500000,40.752958,0.000100,"%.6f")
+    picklong = st.number_input("Pickup Location Longitude :",-75.000000,-73.000000,-73.981880,0.001000,"%.6f")
+    picklat = st.number_input("Pickup Location Latitude :",40.500000,41.500000,40.752805,0.001000,"%.6f")
+    droplong = st.number_input("Dropoff Location Longitude :",-75.000000,-73.000000,-73.981010,0.001000,"%.6f")
+    droplat = st.number_input("Dropoff Location Latitude :",40.500000,41.500000,40.752958,0.001000,"%.6f")
     passcount = st.number_input("Passenger count :",0,7,1)
     
     with st.expander("Your data"):
@@ -125,7 +125,10 @@ def run_ml_app():
     loc2=(droplat, droplong)
     ml_data.append(hs.haversine(loc1,loc2,unit=Unit.KILOMETERS))
     st.write(ml_data)
-        
+
+    scaled_data = []
+    scaler = load_scaler("scaler.pkl")
+    
 
 
 
