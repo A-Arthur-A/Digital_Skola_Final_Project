@@ -77,16 +77,25 @@ def run_ml_app():
     droplong = st.number_input("Dropoff Location Longitude :",-75.000000,-73.000000,-73.981010,0.001000,"%.6f")
     droplat = st.number_input("Dropoff Location Latitude :",40.500000,41.500000,40.752958,0.001000,"%.6f")
     passcount = st.number_input("Passenger count :",0,7,1)
+
     
+    #Jarak perjalanan
+    loc1=(picklat, picklong)
+    loc2=(droplat, droplong)
+    distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
     with st.expander("Your data"):
-        data = {"Pickup longitude" : picklong,
+        ml_data = {"Pickup longitude" : picklong,
                 "Pickup latitude" : picklat,
                 "Dropoff longitude" : droplong,
                 "Dropoff latitude" : droplat,
                 "Passenger count" : passcount,
-                "Pickup date" : pickup_dt,
-                "Pickup time" : pickup_tm 
-                }    
+                "year" : pickup_dt.year,
+                "month" : pickup_dt.month,
+                "day" = pickup_dt.day,
+                "weekday" = pickup_dt.weekday(),
+                "hour" = pickup_tm.hour,
+                "Distance_in_Km" : distance}
+        
     with st.expander("Your Selected Options"):
         result = {
              'Department':department,
@@ -102,24 +111,8 @@ def run_ml_app():
             'avg_training_score':avg_training,
         }
 
-    #Jarak perjalanan
-    loc1=(picklat, picklong)
-    loc2=(droplat, droplong)
-    distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
     
-    ml_data = {"Pickup longitude" : picklong,
-                "Pickup latitude" : picklat,
-                "Dropoff longitude" : droplong,
-                "Dropoff latitude" : droplat,
-                "Passenger count" : passcount,
-                "year" : pickup_dt.year,
-                "month" : pickup_dt.month,
-                "day" = pickup_dt.day,
-                "weekday" = pickup_dt.weekday(),
-                "hour" = pickup_tm.hour,
-                "Distance_in_Km" : distance}
-    
-    
+    model_reg, scaler = joblib.load('model_with_scaler.joblib')
     
     
 
