@@ -39,7 +39,7 @@ def run_ml_app():
     picklat = st.number_input("Pickup Location Latitude :",40.500000,41.500000,40.752805,0.001000,"%.6f")
     droplong = st.number_input("Dropoff Location Longitude :",-75.000000,-73.000000,-73.981010,0.001000,"%.6f")
     droplat = st.number_input("Dropoff Location Latitude :",40.500000,41.500000,40.752958,0.001000,"%.6f")
-    passcount = st.number_input("Passenger count :",0,7,1)
+    passcount = st.number_input("Number of Passenger :",0,7,1)
 
     
     #Jarak perjalanan
@@ -47,19 +47,14 @@ def run_ml_app():
     loc2=(droplat, droplong)
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
     
-    with st.expander("Your Selected Options"):
-        ml_data = {"Pickup Location" : [(picklong, picklat)],
-                "Dropoff_longitude" : [droplong],
-                "dropoff_latitude" : [droplat],
-                "passenger_count" : [passcount],
-                "year" : [pickup_dt.year],
-                "month" : [pickup_dt.month],
-                "day" : [pickup_dt.day],
-                "weekday" : [pickup_dt.weekday()],
-                "hour" : [pickup_tm.hour],
-                "Distance_in_Km" : [distance]}
-    df_new = pd.DataFrame(ml_data)
-    st.write(df_new)
+    ori_data = {"Pickup Location" : [(picklat, picklong)],
+                "Dropoff Location" : [(droplat, droplong)],
+                "Number of Passenger" : [passcount],
+                "Date" : [pickup_dt],
+                "Time" : [pickup_tm],
+                "Distance" : [distance]}
+    df_ori = pd.DataFrame(ori_data)
+    st.write(df_ori)
     
     ml_data = {"pickup_longitude" : [picklong],
                 "pickup_latitude" : [picklat],
