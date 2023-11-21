@@ -53,7 +53,7 @@ def run_ml_app():
                 "Date" : [pickup_dt],
                 "Time" : [pickup_tm]}
     df_ori = pd.DataFrame(ori_data)
-    st.write(df_ori)
+    st.table(df_ori)
     dfl = pd.DataFrame({"lat" : [picklat], "long" : [picklong]})
     ml_data = {"pickup_longitude" : [picklong],
                 "pickup_latitude" : [picklat],
