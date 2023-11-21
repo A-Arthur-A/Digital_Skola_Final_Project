@@ -109,7 +109,7 @@ def run_ml_app():
     year = pickup_dt.year
     month = pickup_dt.month
     day = pickup_dt.day
-    weekday = pickup_dt.weekday
+    weekday = pickup_dt.weekday()
     hour = pickup_tm.hour
     ml_data.append(year)
     ml_data.append(month)
