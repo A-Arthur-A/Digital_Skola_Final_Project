@@ -100,11 +100,11 @@ def run_ml_app():
             'avg_training_score':avg_training,
         }
 
-    ml_data = {"Pickup longitude" : [picklong],
-                "Pickup latitude" : [picklat],
-                "Dropoff longitude" : [droplong],
-                "Dropoff latitude" : [droplat],
-                "Passenger count" : [passcount],
+    ml_data = {"pickup_longitude" : [picklong],
+                "pickup_latitude" : [picklat],
+                "dropoff_longitude" : [droplong],
+                "dropoff_latitude" : [droplat],
+                "passenger_count" : [passcount],
                 "year" : [pickup_dt.year],
                 "month" : [pickup_dt.month],
                 "day" : [pickup_dt.day],
@@ -114,7 +114,9 @@ def run_ml_app():
         
     df_new = pd.DataFrame(ml_data)
     st.write(df_new)
-
+    
+    model_reg, scaler = joblib.load('model_with_scaler.joblib')
+    scaled_data = scaler.transform(df_new)
 
 
 
