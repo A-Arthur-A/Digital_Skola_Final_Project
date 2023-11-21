@@ -150,7 +150,7 @@ def run_ml_app():
     
     st.write(encoded_result)
     # prediction section
-    st.subheader('Prediction Result')
+    st.subheader("Prediction result")
     single_array = np.array(encoded_result).reshape(1, -1)
     # st.write(single_array)
 
@@ -163,10 +163,5 @@ def run_ml_app():
                               'Not Promoted':round(pred_proba[0][0]*100,4)}
     aa = {"tipe data":type(pickup_dt),
          "tipe data":type(pickup_tm)}
-    if prediction == 1:
-        st.success("Congratulation, you get promotion")
-        st.write(aa)
-        st.write(prediction)
-    else:
-        st.warning('Need to improve')
-        st.write(prediction)
+    st.success("Fare amount":prediction_reg)
+    
