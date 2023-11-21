@@ -112,6 +112,7 @@ def run_ml_app():
                 "hour" : [pickup_tm.hour],
                 "Distance_in_Km" : [distance]}
         
+    df_new = pd.DataFrame(ml_data)
     
 
 
