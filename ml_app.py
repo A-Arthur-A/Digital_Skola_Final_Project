@@ -127,8 +127,7 @@ def run_ml_app():
     st.write(ml_data)
 
     scaler = load_scaler("scaler.pkl")
-    scaled_data = scaler.transform(ml_data)
-
+    
     
     
 
