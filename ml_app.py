@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import haversine as hs
 import datetime
+import folium
 # import ml package
 import joblib
 import os
@@ -64,7 +65,9 @@ def run_ml_app():
     service = st.number_input("Length of Service",1,37)
     awards = st.radio("Awards Won", [0,1])
     avg_training = st.number_input("Average Training Score",0,100)
+    m = folium.Map(location=[40.712776, -74.005974], zoom_start=12)
 
+    
     with st.expander("Your Selected Options"):
         result = {
              'Department':department,
