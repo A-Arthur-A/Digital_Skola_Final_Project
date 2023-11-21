@@ -59,7 +59,18 @@ def run_ml_app():
                 "weekday" : [pickup_dt.weekday()],
                 "hour" : [pickup_tm.hour],
                 "Distance_in_Km" : [distance]}
-        
+
+    ml_data = {"pickup_longitude" : [picklong],
+                "pickup_latitude" : [picklat],
+                "dropoff_longitude" : [droplong],
+                "dropoff_latitude" : [droplat],
+                "passenger_count" : [passcount],
+                "year" : [pickup_dt.year],
+                "month" : [pickup_dt.month],
+                "day" : [pickup_dt.day],
+                "weekday" : [pickup_dt.weekday()],
+                "hour" : [pickup_tm.hour],
+                "Distance_in_Km" : [np.log1p(distance)]}
     df_new = pd.DataFrame(ml_data)
     st.write(df_new)
     
@@ -69,8 +80,7 @@ def run_ml_app():
     df_scld = pd.DataFrame(scaled_data, columns=df_new.columns)
     prediction_log = model_reg.predict(df_scld)
     prediction_reg = np.exp(prediction_log)-1
-    st.write(prediction_reg)
-
+    
   
     # prediction section
     st.subheader("Prediction result")
