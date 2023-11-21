@@ -22,11 +22,6 @@ attribute_info = """
 
 now = dt.datetime.now()
 
-
-def load_model(model_file):
-    loaded_model = joblib.load(open(os.path.join(model_file), 'rb'))
-    return loaded_model
-
 def run_ml_app():
     st.subheader("ML Section")
     with st.expander("Attribute Info"):
