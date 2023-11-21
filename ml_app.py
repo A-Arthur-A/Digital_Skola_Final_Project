@@ -127,8 +127,7 @@ def run_ml_app():
     st.write(ml_data)
 
     model_reg, scaler = joblib.load("model_with_scaler.joblib")
-    scaled_data = scaler.transform(ml_data)
-
+    
     
 
 
@@ -160,7 +159,7 @@ def run_ml_app():
             res = get_value(i, rec)
             encoded_result.append(res)
     
-    # st.write(encoded_result)
+    st.write(encoded_result)
     # prediction section
     st.subheader('Prediction Result')
     single_array = np.array(encoded_result).reshape(1, -1)
