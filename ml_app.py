@@ -81,9 +81,16 @@ def run_ml_app():
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
 
-    #st.map(dfl, size= 20, color='green')
+    st.write("Pickup Location :")
     arr = np.array([[picklat, picklong]])
     df = pd.DataFrame(
     arr,
     columns=['lat', 'lon'])
+    st.map(df, color = "green")
+    
+    st.write("Dropoff Location :")
+    arr = np.array([[droplat, droplong]])
+    df = pd.DataFrame(
+    arr,
+    columns=['lat', 'lon'], color = "red")
     st.map(df)
