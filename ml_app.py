@@ -122,33 +122,8 @@ def run_ml_app():
     prediction_log = model_reg.predict(df_scld)
     prediction_reg = np.exp(prediction_log)-1
     st.write(prediction_reg)
-    
-    encoded_result = []
-    for i in result.values():
-        if type(i) == int:
-            encoded_result.append(i)
-        elif i in ['Sales & Marketing', 'Operations', 'Technology', 'Analytics', 'R&D', 'Procurement', 'Finance', 'HR', 'Legal']:
-            res = get_value(i, dep)
-            encoded_result.append(res)
-        elif i in ['region_1','region_2','region_3','region_4','region_5', 'region_6','region_7',
-                                    'region_8','region_9','region_10','region_11','region_12',
-                                    'region_13','region_14','region_15','region_16','region_17','region_18','region_19',
-                                    'region_20','region_21','region_22','region_23','region_24','region_25','region_26',
-                                    'region_27','region_28','region_29','region_30','region_31','region_32','region_33',
-                                    'region_34']:
-            res = get_value(i, reg)
-            encoded_result.append(res)
-        elif i in ["Below Secondary", "Bachelor's", "Master's & above"]:
-            res = get_value(i, edu)
-            encoded_result.append(res)
-        elif i in ['m','f']:
-            res = get_value(i, gen)
-            encoded_result.append(res)
-        elif i in ["referred", "sourcing", "others"]:
-            res = get_value(i, rec)
-            encoded_result.append(res)
-    
-    st.write(encoded_result)
+
+  
     # prediction section
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
