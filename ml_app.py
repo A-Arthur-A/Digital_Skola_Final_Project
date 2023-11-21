@@ -81,10 +81,12 @@ def run_ml_app():
     st.write("Fare amount :", prediction_reg[0])
     st.write("Distance :", distance, "km")
     st.write("Pickup Location :")
+    a = 1
+    df_map = pd.DataFrame({"lat" : [picklat, droplat], "long" : [picklong, droplong], "sz" : [a, a], "clr" : ["green", "red"]})
     arr = np.array([[picklat, picklong]])
     df = pd.DataFrame(
     arr,
     columns=['lat', 'lon'])
-    st.map(df)
+    st.map(df, latitude="lat", longitude="long", size="sz", color="clr" )
     
     
