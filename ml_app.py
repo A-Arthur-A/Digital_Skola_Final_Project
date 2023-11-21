@@ -2,8 +2,6 @@ import streamlit as st
 import numpy as np
 import haversine as hs
 import datetime
-import folium
-from streamlit_folium import st_folium
 
 
 # import ml package
