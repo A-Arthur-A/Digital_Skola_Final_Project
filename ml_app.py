@@ -113,7 +113,7 @@ def run_ml_app():
                 "Distance_in_Km" : [distance]}
         
     df_new = pd.DataFrame(ml_data)
-    
+    st.write(df_new)
 
 
 
