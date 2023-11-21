@@ -119,7 +119,6 @@ def run_ml_app():
                 "hour" = pickup_tm.hour,
                 "Distance_in_Km" : distance}
     
-    model_reg, scaler = joblib.load('model_with_scaler.joblib')
     
     
     
