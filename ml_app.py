@@ -59,7 +59,9 @@ def run_ml_app():
                 "weekday" : [pickup_dt.weekday()],
                 "hour" : [pickup_tm.hour],
                 "Distance_in_Km" : [distance]}
-
+    df_new = pd.DataFrame(ml_data)
+    st.write(df_new)
+    
     ml_data = {"pickup_longitude" : [picklong],
                 "pickup_latitude" : [picklat],
                 "dropoff_longitude" : [droplong],
@@ -72,7 +74,6 @@ def run_ml_app():
                 "hour" : [pickup_tm.hour],
                 "Distance_in_Km" : [np.log1p(distance)]}
     df_new = pd.DataFrame(ml_data)
-    st.write(df_new)
     
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
     scaled_data = scaler.transform(df_new)
