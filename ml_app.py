@@ -10,7 +10,7 @@ import os
 
 attribute_info = """
                  - pickup date : YYYY-MM-DD UTC
-                 - pickup time : hh:mm:ss UTC
+                 - pickup time : hh:mm UTC
                  - pickup longitude : Pickup Location, Longitude
                  - pickup longitude : Pickup Location, Latitude
                  - pickup longitude : dropoff Location, Longitude
@@ -99,7 +99,17 @@ def run_ml_app():
     
     ml_data = []
     for i in data.values():
-      ml_data.append(i)
+      if type(i) == datetime.date(%Y, %m, %d):
+        year = i.dt.year
+        month = i.dt.month
+        day = i.dt.day
+        weekday = i.dt.weekday
+        ml_data.append(i)
+      elif type(i) == datetime.time(%H, %M):
+        hour = i.dt.hour
+        ml_data.append(i)
+      else :
+        ml_data.append(i)
     st.write(ml_data)
         
 
