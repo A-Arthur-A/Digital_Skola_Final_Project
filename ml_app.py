@@ -47,12 +47,14 @@ def run_ml_app():
     loc2=(droplat, droplong)
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
     
-    ori_data = {"Pickup Location" : [(picklat, picklong)],
+    ori_data = {"Date" : [pickup_dt],
+                "Time" : [pickup_tm],
+                "Pickup Location" : [(picklat, picklong)],
                 "Dropoff Location" : [(droplat, droplong)],
-                "Number of Passenger" : [passcount],
-                "Date" : [pickup_dt],
-                "Time" : [pickup_tm]}
+                "Number of Passenger" : [passcount]}
+                
     df_ori = pd.DataFrame(ori_data)
+    df_ori["Number of Passenger"] = df_ori["Number of Passenger"].astype(int)
     st.table(df_ori)
     dfl = pd.DataFrame({"lat" : [picklat], "long" : [picklong]})
     ml_data = {"pickup_longitude" : [picklong],
