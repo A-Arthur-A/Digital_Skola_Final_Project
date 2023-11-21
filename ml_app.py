@@ -99,17 +99,12 @@ def run_ml_app():
     
     ml_data = []
     for i in data.values():
-      if type(i) == datetime.date(%Y, %m, %d):
-        year = i.dt.year
-        month = i.dt.month
-        day = i.dt.day
-        weekday = i.dt.weekday
+      if type(i) == int:
         ml_data.append(i)
-      elif type(i) == datetime.time(%H, %M):
-        hour = i.dt.hour
+      elif type(i) == float:
         ml_data.append(i)
       else :
-        ml_data.append(i)
+        pass
     st.write(ml_data)
         
 
