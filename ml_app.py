@@ -11,13 +11,13 @@ import joblib
 import os
 
 attribute_info = """
-                 - pickup date : YYYY-MM-DD UTC
-                 - pickup time : hh:mm UTC
-                 - pickup longitude : Pickup Location, Longitude
-                 - pickup longitude : Pickup Location, Latitude
-                 - pickup longitude : dropoff Location, Longitude
-                 - pickup longitude : dropoff Location, Latitude
-                 - passenger count : 1 - 7
+                 - Pickup date : YYYY-MM-DD UTC
+                 - Pickup time : hh:mm UTC
+                 - Pickup longitude : Pickup Location, Longitude
+                 - Pickup longitude : Pickup Location, Latitude
+                 - Pickup longitude : dropoff Location, Longitude
+                 - Pickup longitude : dropoff Location, Latitude
+                 - Passenger count : 1 - 7
                  """
 
 now = dt.datetime.now()
