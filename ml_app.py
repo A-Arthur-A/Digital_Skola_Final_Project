@@ -82,7 +82,6 @@ def run_ml_app():
     #Jarak perjalanan
     loc1=(picklat, picklong)
     loc2=(droplat, droplong)
-    year = pickup_dt.year
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
     with st.expander("Your data"):
         ml_data = {"Pickup longitude" : picklong,
@@ -90,7 +89,7 @@ def run_ml_app():
                 "Dropoff longitude" : droplong,
                 "Dropoff latitude" : droplat,
                 "Passenger count" : passcount,
-                "year" : year,
+                "year" : pickup_dt.year,
                 "month" : pickup_dt.month,
                 "day" : pickup_dt.day,
                 "weekday" : pickup_dt.weekday(),
