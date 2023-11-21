@@ -80,4 +80,6 @@ def run_ml_app():
     # prediction section
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
+
+    st.map(df_ori, latitude='picklat', longitude='picklong', size= 20, color='green')
     
