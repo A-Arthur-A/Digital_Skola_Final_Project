@@ -115,7 +115,7 @@ def run_ml_app():
 
     df_new = pd.DataFrame(ml_data, index =[1])
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
-    
+    scaled_data = scaler.transform(df_new)
     
 
 
