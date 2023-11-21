@@ -120,8 +120,9 @@ def run_ml_app():
     
     df_scld = pd.DataFrame(scaled_data, columns=df_new.columns)
     prediction_log = model_reg.predict(df_scld)
-    st.write(prediction_log)
-  
+    prediction_reg = np.exp(prediction_log)-1
+    st.write(prediction_reg)
+    
     encoded_result = []
     for i in result.values():
         if type(i) == int:
