@@ -38,7 +38,11 @@ def get_value(val, my_dict):
     for key, value in my_dict.items():
         if val == key:
             return value
-        
+          
+def load_scaler(scaler_file):
+    loaded_scaler = joblib.load(open(os.path.join(scaler_file), 'rb'))
+    return loaded_scaler
+
 def load_model(model_file):
     loaded_model = joblib.load(open(os.path.join(model_file), 'rb'))
     return loaded_model
