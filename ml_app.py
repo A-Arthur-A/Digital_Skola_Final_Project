@@ -81,15 +81,17 @@ def run_ml_app():
     st.write("Fare amount :", prediction_reg[0])
     st.write("Distance :", distance, "km")
     st.write("Pickup Location :")
-    df = pd.DataFrame({
-    "col1": np.random.randn(1000) / 50 + 37.76,
-    "col2": np.random.randn(1000) / 50 + -122.4,
-    "col3": np.random.randn(1000) * 100,
-    "col4": np.random.rand(1000, 4).tolist(),})
-
-    st.map(df,
-    latitude='col1',
-    longitude='col2',
-    size='col3',
-    color='col4')
     
+    arr1 = np.array([[picklat, picklong]])
+    df1 = pd.DataFrame(
+    arr1,
+    columns=['lat', 'lon'])
+    st.map(df1)
+
+    st.write("Dropoff Location :")
+    
+    arr2 = np.array([[droplat, droplong]])
+    df2 = pd.DataFrame(
+    arr2,
+    columns=['lat', 'lon'])
+    st.map(df2)
