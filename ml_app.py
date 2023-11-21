@@ -73,7 +73,6 @@ def run_ml_app():
     droplat = st.number_input("Dropoff Location Latitude :",40.500000,41.500000,40.752958,0.000100,"%.6f")
     passcount = st.number_input("Passenger count :",0,7,1)
     
-    
     with st.expander("Your Selected Options"):
         data = {"Pickup date" : pickup_dt,
                 "Pickup time" : pickup_tm, 
@@ -82,7 +81,8 @@ def run_ml_app():
                 "Dropoff latitude" : droplat,
                 "Dropoff longitude" : droplong,
                 "Passenger count" : passcount
-                 }
+               }    
+    with st.expander("Your Selected Options"):
         result = {
              'Department':department,
             'Region':region,
