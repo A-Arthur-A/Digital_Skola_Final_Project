@@ -83,7 +83,9 @@ def run_ml_app():
     loc1=(picklat, picklong)
     loc2=(droplat, droplong)
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
-    ml_data = {"Pickup longitude" : picklong,
+
+    with st.expander("Your data"):
+      ml_data = {"Pickup longitude" : picklong,
                 "Pickup latitude" : picklat,
                 "Dropoff longitude" : droplong,
                 "Dropoff latitude" : droplat,
