@@ -81,5 +81,5 @@ def run_ml_app():
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
 
-    st.map(df_new, latitude="pickup_longitude", longitude="pickup_longitude", size= 20, color='green')
+    st.map(latitude=picklat, longitude=picklong, size= 20, color='green')
     
