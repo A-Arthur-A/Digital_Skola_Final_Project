@@ -69,13 +69,9 @@ def run_ml_app():
     awards = st.radio("Awards Won", [0,1])
     avg_training = st.number_input("Average Training Score",0,100)
     # center on Liberty Bell, add marker
-m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-folium.Marker(
-    [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
-).add_to(m)
-
-# call to render Folium map in Streamlit
-st_data = st_folium(m, width=725)
+    m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+    folium.Marker([39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell").add_to(m)
+    st_data = st_folium(m, width=725)
 
     
     with st.expander("Your Selected Options"):
