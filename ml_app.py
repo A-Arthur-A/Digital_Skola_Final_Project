@@ -119,7 +119,7 @@ def run_ml_app():
     scaled_data = scaler.transform(df_new)
     df_scld = pd.DataFrame(scaled_data, columns=scaled_data.columns)
     prediction_log = model_reg.predict(df_scld)
-    prediction = np.exp(prediction_log) - 1
+    prediction_reg = (np.exp(prediction_log)-1)
     
 
   
@@ -166,7 +166,7 @@ def run_ml_app():
     if prediction == 1:
         st.success("Congratulation, you get promotion")
         st.write(aa)
-        st.write(prediction)
+        st.write(prediction_reg)
     else:
         st.warning('Need to improve')
-        st.write(prediction)
+        st.write(prediction_reg)
