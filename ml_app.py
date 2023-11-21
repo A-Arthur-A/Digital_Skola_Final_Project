@@ -129,6 +129,7 @@ def run_ml_app():
     scaled_data = []
     scaler = load_scaler("scaler.pkl")
     
+    
 
 
 
