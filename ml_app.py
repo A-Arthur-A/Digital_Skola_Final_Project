@@ -79,7 +79,7 @@ def run_ml_app():
     # prediction section
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
-    st.write("Distance :", distance)
+    st.write("Distance :", distance, "km")
     st.write("Pickup Location :")
     arr = np.array([[picklat, picklong]])
     df = pd.DataFrame(
