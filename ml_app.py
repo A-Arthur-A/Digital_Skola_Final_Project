@@ -48,9 +48,8 @@ def run_ml_app():
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
     
     with st.expander("Your Selected Options"):
-        ml_data = {"pickup_longitude" : [picklong],
-                "pickup_latitude" : [picklat],
-                "dropoff_longitude" : [droplong],
+        ml_data = {"Pickup Location" : [(picklong, picklat)],
+                "Dropoff_longitude" : [droplong],
                 "dropoff_latitude" : [droplat],
                 "passenger_count" : [passcount],
                 "year" : [pickup_dt.year],
