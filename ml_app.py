@@ -51,8 +51,7 @@ def run_ml_app():
                 "Dropoff Location" : [(droplat, droplong)],
                 "Number of Passenger" : [passcount],
                 "Date" : [pickup_dt],
-                "Time" : [pickup_tm],
-                "Distance" : [distance]}
+                "Time" : [pickup_tm]}
     df_ori = pd.DataFrame(ori_data)
     st.write(df_ori)
     dfl = pd.DataFrame({"lat" : [picklat], "long" : [picklong]})
@@ -80,7 +79,7 @@ def run_ml_app():
     # prediction section
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
-
+    st.write("Distance :", distance)
     st.write("Pickup Location :")
     arr = np.array([[picklat, picklong]])
     df = pd.DataFrame(
