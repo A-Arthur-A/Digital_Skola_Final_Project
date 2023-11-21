@@ -46,6 +46,7 @@ def run_ml_app():
 
     st.subheader("Input Your Data")
     pickup_dt = st.date_input("Pickup Date", value = now)
+    pickup_tm = st.time_input("Pickup Time", value = now)
     department = st.selectbox('Department', ['Sales & Marketing', 'Operations', 'Technology', 'Analytics', 
                                              'R&D', 'Procurement', 'Finance', 'HR', 'Legal'])
     region = st.selectbox('Region', ['region_1','region_2','region_3','region_4','region_5', 'region_6','region_7',
