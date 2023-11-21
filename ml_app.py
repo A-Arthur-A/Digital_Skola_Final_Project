@@ -49,6 +49,10 @@ def run_ml_app():
     st.subheader("Input Your Data")
     pickup_dt = st.date_input("Pickup Date", value = now)
     pickup_tm = st.time_input("Pickup Time", value = now)
+    picklong = st.number_input(label=“Pickup Location Longitude”, min_value = -75.000000, max_value = -73.000000, value = -73.981880, step=1.,format="%.6f")
+    picklat = st.number_input(label=“Pickup Location Latitude”, min_value = 40.500000, max_value = 41.500000, value = 40.752805, step=1.,format="%.6f")
+    droplong = st.number_input(label=“Dropoff Location Longitude”, min_value = -75.000000, max_value = -73.000000, value = 73.981010, step=1.,format="%.6f")
+    droplat = st.number_input(label=“Dropoff Location Latitude”, min_value = 40.500000, max_value = 41.500000, value = 40.752958, step=1.,format="%.6f")
     department = st.selectbox('Department', ['Sales & Marketing', 'Operations', 'Technology', 'Analytics', 
                                              'R&D', 'Procurement', 'Finance', 'HR', 'Legal'])
     region = st.selectbox('Region', ['region_1','region_2','region_3','region_4','region_5', 'region_6','region_7',
