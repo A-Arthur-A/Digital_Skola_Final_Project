@@ -55,7 +55,7 @@ def run_ml_app():
                 "Distance" : [distance]}
     df_ori = pd.DataFrame(ori_data)
     st.write(df_ori)
-    
+    dfl = pd.DataFrame({"lat" : [picklat], "long" : [picklong]})
     ml_data = {"pickup_longitude" : [picklong],
                 "pickup_latitude" : [picklat],
                 "dropoff_longitude" : [droplong],
@@ -81,5 +81,5 @@ def run_ml_app():
     st.subheader("Prediction result")
     st.write("Fare amount :", prediction_reg[0])
 
-    st.map(latitude=picklat, longitude=picklong, size= 20, color='green')
+    st.map(latitude=[picklat], longitude=[picklong], size= 20, color='green')
     
