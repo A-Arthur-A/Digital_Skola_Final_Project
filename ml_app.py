@@ -82,7 +82,7 @@ def run_ml_app():
     st.write("Fare amount :", prediction_reg[0])
 
     st.write("Pickup Location :")
-    arr = np.array([[picklat, picklong], [droplat, droplong]])
+    arr = np.array([[picklat, picklong]])
     df = pd.DataFrame(
     arr,
     columns=['lat', 'lon'])
