@@ -88,9 +88,4 @@ def run_ml_app():
     columns=['lat', 'lon'])
     st.map(df, color = "green")
     
-    st.write("Dropoff Location :")
-    arr = np.array([[droplat, droplong]])
-    df = pd.DataFrame(
-    arr,
-    columns=['lat', 'lon'], color = "red")
-    st.map(df)
+    
