@@ -11,13 +11,13 @@ html_temp = """
             """
 
 desc_temp = """
-            ### Employee Promotion Prediction App
+            ### Fare Amount Prediction App
             This app will be used by the driver to predict the fare amount of the order
             #### Data Source
             - https://github.com/A-Arthur-A/Digital_Skola_Final_Project/raw/main/uber.csv
             #### App Content
             - Exploratory Data Analysis
-            - Machine Learning Section
+            - Machine Learning Regression Section
             """
 
 def main():
