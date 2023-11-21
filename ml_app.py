@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import haversine as hs
-import datetime
+import datetime as dt
 
 
 # import ml package
@@ -30,7 +30,7 @@ reg = {'region_1':1,'region_2':2,'region_3':3,'region_4':4,'region_5':5,
        'region_21':21,'region_22':22,'region_23':23,'region_24':24,'region_25':25,
        'region_26':26,'region_27':27,'region_28':28,'region_29':29,'region_30':30,
        'region_31':31,'region_32':32,'region_33':33,'region_34':34}
-now = datetime.datetime.now()
+now = dt.datetime.now()
 
 
 def get_value(val, my_dict):
@@ -98,7 +98,15 @@ def run_ml_app():
         }
     
     # st.write(result)
+    Scaled_result = []
+    for i in data.values():
+      if type(i) == int:
+        scaled_result.append(i)
 
+
+
+
+  
     encoded_result = []
     for i in result.values():
         if type(i) == int:
@@ -140,7 +148,8 @@ def run_ml_app():
     
     if prediction == 1:
         st.success("Congratulation, you get promotion")
-
+        st.write(type(pickup_dt))
+        st.write(type(pickup_tm))
         st.write(pred_probability_score)
     else:
         st.warning('Need to improve')
