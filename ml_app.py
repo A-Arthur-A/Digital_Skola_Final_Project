@@ -118,7 +118,6 @@ def run_ml_app():
                 "weekday" = pickup_dt.weekday(),
                 "hour" = pickup_tm.hour,
                 "Distance_in_Km" : distance}
-    st.write(ml_data)
     
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
     
