@@ -113,7 +113,7 @@ def run_ml_app():
             'avg_training_score':avg_training,
         }
 
-    df_new = pd.DataFrame(ml_data, index =1)
+    df_new = pd.DataFrame(ml_data, index =[1])
     model_reg, scaler = joblib.load('model_with_scaler.joblib')
     
     
