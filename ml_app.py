@@ -9,7 +9,8 @@ import joblib
 import os
 
 attribute_info = """
-                 - pickup datetime: YYYY-MM-DD hh:mm:ss UTC
+                 - pickup date : YYYY-MM-DD UTC
+                 - pickup time : hh:mm:ss UTC
                  - pickup longitude : Pickup Location, Longitude
                  - pickup longitude : Pickup Location, Latitude
                  - pickup longitude : dropoff Location, Longitude
@@ -74,6 +75,14 @@ def run_ml_app():
     
     
     with st.expander("Your Selected Options"):
+        data = {"Pickup date" : pickup_dt,
+                "Pickup time" : pickup_tm, 
+                "Pickup latitude" : picklat,
+                "Pickup longitude" : packlong,
+                "Dropoff latitude" : droplat,
+                "Dropoff longitude" : droplong,
+                "Passenger count" : passcount
+                 }
         result = {
              'Department':department,
             'Region':region,
