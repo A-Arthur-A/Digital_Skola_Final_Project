@@ -8,17 +8,11 @@ import os
 
 attribute_info = """
                  - pickup datetime: YYYY-MM-DD hh:mm:ss UTC
-                 - pickup longitude :
-                 - Region: region 1 - region 34
-                 - Educaiton: Below Secondary, Bachelor's, Master's & above
-                 - Gender: Male and Female
-                 - Recruitment Channel: Referred, Sourcing, Others
-                 - No of Training: 1-10
-                 - Age: 10-60
-                 - Previous Year Rating: 1-5
-                 - Length of Service: 1-37 Month
-                 - Awards Won: 1. Yes, 0. No
-                 - Avg Training Score: 0-100
+                 - pickup longitude : Pickup Location, Longitude
+                 - pickup longitude : Pickup Location, Latitude
+                 - pickup longitude : dropoff Location, Longitude
+                 - pickup longitude : dropoff Location, Latitude
+                 - passenger count : 1 - 7
                  """
 
 dep = {'Sales & Marketing':1, 'Operations':2, 'Technology':3, 'Analytics':4,
