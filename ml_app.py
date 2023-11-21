@@ -145,11 +145,11 @@ def run_ml_app():
 
     pred_probability_score = {'Promoted':round(pred_proba[0][1]*100,4),
                               'Not Promoted':round(pred_proba[0][0]*100,4)}
-    
+    aa = {"tipe data":type(pickup_dt),
+         "tipe data":type(pickup_tm)}
     if prediction == 1:
         st.success("Congratulation, you get promotion")
-        st.write(type(pickup_dt))
-        st.write(type(pickup_tm))
+        st.write(aa)
         st.write(pred_probability_score)
     else:
         st.warning('Need to improve')
