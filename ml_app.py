@@ -66,7 +66,7 @@ def run_ml_app():
     service = st.number_input("Length of Service",1,37)
     awards = st.radio("Awards Won", [0,1])
     avg_training = st.number_input("Average Training Score",0,100)
-    picklong = st.number_input("Pickup Location Longitude",-75.0,-73.0,-73.0,1.,"%f")
+    picklong = st.number_input("Pickup Location Longitude",-75.0,-73.0,-73.0,1.,"%.1f")
     
     with st.expander("Your Selected Options"):
         result = {
