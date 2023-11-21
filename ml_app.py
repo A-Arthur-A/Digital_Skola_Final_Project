@@ -151,16 +151,5 @@ def run_ml_app():
     st.write(encoded_result)
     # prediction section
     st.subheader("Prediction result")
-    single_array = np.array(encoded_result).reshape(1, -1)
-    # st.write(single_array)
-
-    model = load_model("model_grad.pkl")
-
-    prediction = model.predict(single_array)
-    pred_proba = model.predict_proba(single_array)
-
-    pred_probability_score = {'Promoted':round(pred_proba[0][1]*100,4),
-                              'Not Promoted':round(pred_proba[0][0]*100,4)}
-    aa = {"tipe data":type(pickup_dt),
-         "tipe data":type(pickup_tm)}
+    st.write("Fare amount":prediction_reg)
     
