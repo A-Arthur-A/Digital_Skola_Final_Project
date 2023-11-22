@@ -48,7 +48,7 @@ def run_ml_app():
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
     
     ori_data = {"Date" : [pickup_dt],
-                "Time" : [pickup_tm],
+                "Time" : [(pickup_tm)],
                 "Pickup Location" : [(picklat, picklong)],
                 "Dropoff Location" : [(droplat, droplong)],
                 "Number of Passenger" : [passcount]}
