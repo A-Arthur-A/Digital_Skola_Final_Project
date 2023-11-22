@@ -35,10 +35,10 @@ def run_ml_app():
     st.subheader("Input Your Data")
     pickup_dt = st.date_input("Pickup Date", value = now)
     pickup_tm = st.time_input("Pickup Time", value = now)
-    picklong = st.number_input("Pickup Location Longitude :",-75.000000,-73.000000,-73.981880,0.001000,"%.6f")
-    picklat = st.number_input("Pickup Location Latitude :",40.500000,41.500000,40.752805,0.001000,"%.6f")
-    droplong = st.number_input("Dropoff Location Longitude :",-75.000000,-73.000000,-73.981010,0.001000,"%.6f")
-    droplat = st.number_input("Dropoff Location Latitude :",40.500000,41.500000,40.752958,0.001000,"%.6f")
+    picklong = st.number_input("Pickup Location Longitude :",-80.000000,-65.000000,-73.981880,0.001000,"%.6f")
+    picklat = st.number_input("Pickup Location Latitude :",35.000000,50.000000,40.752805,0.001000,"%.6f")
+    droplong = st.number_input("Dropoff Location Longitude :",-80.000000,-65.000000,-73.981010,0.001000,"%.6f")
+    droplat = st.number_input("Dropoff Location Latitude :",35.000000,50.000000,40.752958,0.001000,"%.6f")
     passcount = st.number_input("Number of Passenger :",0,7,1)
 
     
