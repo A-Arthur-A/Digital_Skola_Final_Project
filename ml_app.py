@@ -46,9 +46,8 @@ def run_ml_app():
     loc1=(picklat, picklong)
     loc2=(droplat, droplong)
     distance = hs.haversine(loc1,loc2,unit=Unit.KILOMETERS)
-    a = pickup_tm.hour.strftime("%H") + ":" + pickup_tm.minute.strftime("%M")
     ori_data = {"Date" : [pickup_dt],
-                "Time" : [a],
+                "Time" : [(pickup_tm.hour, pickup_tm.minute)],
                 "Pickup Location" : [(picklat, picklong)],
                 "Dropoff Location" : [(droplat, droplong)],
                 "Number of Passenger" : [passcount]}
