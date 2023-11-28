@@ -5,5 +5,8 @@ Uber delivers service to lakhs of customers daily and it can be really important
 
 The source of our dataset is from https://www.kaggle.com/datasets/yasserh/uber-fares-dataset
 
-And here is the notebook where we did the data preprocessing and made the regression machine learning model :
+Here is the notebook where we did the data preprocessing and made the regression machine learning model :
 https://colab.research.google.com/drive/1kpMz8SW7fj3p9RZO_Dq3zoczaoIQosjT?usp=sharing
+
+and here is the product of our deployment using streamlit :
+https://digitalskolafinalproject-gti7edusgbks2gefsznrrt.streamlit.app/
